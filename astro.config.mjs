@@ -13,7 +13,6 @@ import tailwind from "@astrojs/tailwind";
   and leave it empty or use localhost URL. It won't break anything.
 */
 import webmanifest from "astro-webmanifest";
-import {SITE_DESCRIPTION} from "./src/config";
 const SERVER_PORT = 3000;
 // the url to access your blog during local development
 const LOCALHOST_URL = `http://localhost:${SERVER_PORT}`;
@@ -51,7 +50,7 @@ export default defineConfig({
      **/
 
     short_name: 'dramiro.com',
-    description: SITE_DESCRIPTION,
+    description: "Pagina personal de David Ramiro React Developer",
     start_url: '/',
     theme_color: '#3367D6',
     background_color: '#3367D6',
