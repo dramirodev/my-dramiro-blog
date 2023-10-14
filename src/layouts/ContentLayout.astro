@@ -1,5 +1,5 @@
 ---
-/* 
+/*
   This layout is used in pages that render markdoc content
   - pages/blog/[slug].astro
 */
@@ -8,7 +8,6 @@
 import "../styles/global.css";
 
 import GoogleFont from "./GoogleFont.astro";
-import FontAwesome from "./FontAwesome.astro";
 import ThemeScript from "./ThemeScript.astro";
 import Favicon from "./Favicon.astro";
 import Header from "../components/Header.astro";
@@ -38,7 +37,6 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
     <slot name="meta" />
     <GoogleFont />
     <ThemeScript />
-    <FontAwesome />
   </head>
 
   <body

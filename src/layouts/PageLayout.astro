@@ -1,6 +1,6 @@
 ---
-/* 
-  This layout is used in 
+/*
+  This layout is used in
   - pages/index.astro
   - pages/blog.astro
   - pages/projects.astro
@@ -10,7 +10,6 @@
 import "../styles/global.css";
 
 import GoogleFont from "./GoogleFont.astro";
-import FontAwesome from "./FontAwesome.astro";
 import ThemeScript from "./ThemeScript.astro";
 import Favicon from "./Favicon.astro";
 import Header from "../components/Header.astro";
@@ -24,11 +23,12 @@ import Footer from "../components/Footer.astro";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="generator" content="Blogster" />
+    <meta name="theme-color" content="#f687b3" />
+    <meta name="canonical" content="https://davidramiro.com" />
     <Favicon />
     <slot name="meta" />
     <GoogleFont />
     <ThemeScript />
-    <FontAwesome />
   </head>
 
   <body
