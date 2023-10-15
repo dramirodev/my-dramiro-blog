@@ -12,6 +12,7 @@ import ThemeScript from "./ThemeScript.astro";
 import Favicon from "./Favicon.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import {formattedDate} from "../lib/date";
 
 export interface Props {
   title: string;
@@ -19,11 +20,7 @@ export interface Props {
 }
 
 const { title, date } = Astro.props;
-const formattedDate = new Date(date).toLocaleDateString("en-us", {
-  year: "numeric",
-  month: "short",
-  day: "numeric",
-});
+const dateFormatted = formattedDate(date);
 ---
 
 <!DOCTYPE html>
@@ -54,7 +51,7 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
             {title}
           </span>
         </h1>
-        <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
+        <time class="block mb-[2em] text-text-muted">{dateFormatted}</time>
         <slot name="content" />
       </section>
     </main>

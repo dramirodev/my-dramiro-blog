@@ -1,6 +1,7 @@
 ---
 import { readAll } from "../lib/markdoc/read";
 import { blog } from "../lib/markdoc/frontmatter.schema";
+import {formattedDate} from "../lib/date";
 
 const posts = await readAll({
   directory: "blog",
@@ -14,18 +15,15 @@ const sortedPosts = posts
       new Date(b.frontmatter.date).valueOf() -
       new Date(a.frontmatter.date).valueOf()
   );
+
 ---
   <section >
     <ul>
       {
         sortedPosts.map((post) => {
-          const formattedDate = new Date(
+          const dateFormatted = formattedDate(
             post.frontmatter.date
-          ).toLocaleDateString("en-us", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          });
+          );
           return (
             <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
               <div class="title">
@@ -61,7 +59,7 @@ const sortedPosts = posts
               </div>
               <div class="text-text-muted text-sm italic pt-1">
                 <time datetime={post.frontmatter.date.toISOString()}>
-                  {formattedDate}
+                  {dateFormatted}
                 </time>
               </div>
             </li>
