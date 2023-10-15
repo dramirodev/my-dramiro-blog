@@ -17,6 +17,7 @@
     "@astrojs/rss": "^2.0.0",
     "@astrojs/sitemap": "^3.0.1",
     "@astrojs/tailwind": "^5.0.2",
+    "@astrojs/ts-plugin": "^1.2.0",
     "@tailwindcss/typography": "^0.5.10",
     "astro": "^3.2.3",
     "astro-markdoc-renderer": "0.0.1-alpha.1",
