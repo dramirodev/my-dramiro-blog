@@ -1,5 +1,5 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
-import { defineConfig } from "astro/config";
+import {defineConfig} from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
@@ -13,6 +13,7 @@ import tailwind from "@astrojs/tailwind";
   and leave it empty or use localhost URL. It won't break anything.
 */
 import webmanifest from "astro-webmanifest";
+
 const SERVER_PORT = 3000;
 // the url to access your blog during local development
 const LOCALHOST_URL = `http://localhost:${SERVER_PORT}`;
@@ -24,37 +25,42 @@ const isBuild = SCRIPT.includes("astro build");
 let BASE_URL = LOCALHOST_URL;
 // When you're building your site in local or in CI, you could just set your URL manually
 if (isBuild) {
-  BASE_URL = LIVE_URL;
+    BASE_URL = LIVE_URL;
 }
 
 // https://astro.build/config
 export default defineConfig({
-  server: {
-    port: SERVER_PORT
-  },
-  site: BASE_URL,
-  integrations: [sitemap(), tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  }), webmanifest({
-    /**
-     * required
-     **/
-    name: 'dramiro.com',
-
-    /**
-     * optional
-
-    icon: 'src/images/your-icon.svg', // source for favicon & icons
-     **/
-
-    short_name: 'dramiro.com',
-    description: "Pagina personal de David Ramiro React Developer",
-    start_url: '/',
-    theme_color: '#3367D6',
-    background_color: '#3367D6',
-    display: 'standalone',
-    prefer_related_applications: false,
-  })]
+    server: {
+        port: SERVER_PORT
+    },
+    site: BASE_URL,
+    integrations: [sitemap(), tailwind({
+        config: {
+            applyBaseStyles: false
+        }
+    }), webmanifest({
+        /**
+         * required
+         **/
+        description: "Pagina personal de David Ramiro React Developer",
+        start_url: '/',
+        prefer_related_applications: false,
+        name: "davidramiro",
+        short_name: "davidramiro",
+        "icons": [
+            {
+                "src": "/android-chrome-192x192.png",
+                "sizes": "192x192",
+                "type": "image/png"
+            },
+            {
+                "src": "/android-chrome-512x512.png",
+                "sizes": "512x512",
+                "type": "image/png"
+            }
+        ],
+        theme_color: "#ffffff",
+        background_color: "#ffffff",
+        display: "standalone"
+    })]
 });

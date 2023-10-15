@@ -32,7 +32,7 @@ import HeaderLink from "./HeaderLink.astro";
         </section>
     </nav>
     <nav class="md:hidden flex items-center">
-        <button id="mobile-menu-open">
+        <button id="mobile-menu-open" aria-label="menu open">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24" height="24"
                  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                  stroke-linejoin="round">
@@ -54,7 +54,7 @@ import HeaderLink from "./HeaderLink.astro";
                 class="hide-menu fixed top-0 left-0 z-10 w-full h-full transition-transform bg-black/75 border-primary-blue"
         >
             <div class="bg-bg-body w-[75%] h-full drop-shadow-2xl">
-                <button id="mobile-menu-close" class="px-6 h-[5rem] text-lg xml-[1px]">
+                <button id="mobile-menu-close" class="px-6 h-[5rem] text-lg xml-[1px]" aria-label="menu close">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24"
                          height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                          stroke-linecap="round" stroke-linejoin="round">
