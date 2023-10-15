@@ -1,19 +1,10 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
-import {defineConfig} from "astro/config";
+import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-
-/*
-  We are doing some URL mumbo jumbo here to tell Astro what the URL of your website will be.
-  In local development, your SEO meta tags will have localhost URL.
-  In built production websites, your SEO meta tags should have your website URL.
-  So we give our website URL here and the template will know what URL to use
-  for meta tags during build.
-  If you don't know your website URL yet, don't worry about this
-  and leave it empty or use localhost URL. It won't break anything.
-*/
-import webmanifest from "astro-webmanifest";
-
+import markdoc from "@astrojs/markdoc";
+import robots from "astro-robots";
+import netlify from "@astrojs/netlify/functions";
 const SERVER_PORT = 3000;
 // the url to access your blog during local development
 const LOCALHOST_URL = `http://localhost:${SERVER_PORT}`;
@@ -25,42 +16,21 @@ const isBuild = SCRIPT.includes("astro build");
 let BASE_URL = LOCALHOST_URL;
 // When you're building your site in local or in CI, you could just set your URL manually
 if (isBuild) {
-    BASE_URL = LIVE_URL;
+  BASE_URL = LIVE_URL;
 }
+
 
 // https://astro.build/config
 export default defineConfig({
-    server: {
-        port: SERVER_PORT
-    },
-    site: BASE_URL,
-    integrations: [sitemap(), tailwind({
-        config: {
-            applyBaseStyles: false
-        }
-    }), webmanifest({
-        /**
-         * required
-         **/
-        description: "Pagina personal de David Ramiro React Developer",
-        start_url: '/',
-        prefer_related_applications: false,
-        name: "davidramiro",
-        short_name: "davidramiro",
-        icons: [
-            {
-                "src": "/android-chrome-192x192.png",
-                "sizes": "192x192",
-                "type": "image/png"
-            },
-            {
-                "src": "/android-chrome-512x512.png",
-                "sizes": "512x512",
-                "type": "image/png"
-            }
-        ],
-        theme_color: "#ffffff",
-        background_color: "#ffffff",
-        display: "standalone"
-    })]
+  server: {
+    port: SERVER_PORT
+  },
+  site: BASE_URL,
+  integrations: [sitemap(), tailwind({
+    config: {
+      applyBaseStyles: false
+    }
+  }), markdoc(), robots()],
+  output: "server",
+  adapter: netlify()
 });
