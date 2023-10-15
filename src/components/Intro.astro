@@ -1,6 +1,10 @@
 ---
 import { Image, Picture} from 'astro:assets';
 import DavidImage from "src/assets/david.png"
+
+const fechaInicio = new Date(2016, 5, 5);
+const fechaActual = new Date();
+const aniosExperiencia = fechaActual.getFullYear() - fechaInicio.getFullYear();
 ---
 
 <section class="mb-8">
@@ -27,8 +31,10 @@ import DavidImage from "src/assets/david.png"
         />
     </section>
     <p class="mb-5">
-      Hola!! Bienvenido a mi bloc de notas. Aquí recojo lo que voy aprendiendo sobre tecnologías frontend.
-      Cursos que voy haciendo y en definitiva lo que me pueda ser util en un futuro.
+      Hola! Soy desarrollador web con más de {aniosExperiencia} años de experiencia trabajando con tecnologías JavaScript. Actualmente trabajo en <a href="https://www.innusual.tech/" target="_blank" rel="noopener noreferrer" class="text-text-bold">Innusual</a> como desarrollador frontend.
+    </p>
+    <p class="mb-5">
+      En mi tiempo libre me gusta leer y ver charlas técnicas sobre desarrollo web, buenas prácticas y desarrollo Javascript.
     </p>
   </div>
 </section>
