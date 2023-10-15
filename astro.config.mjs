@@ -30,7 +30,7 @@ export default defineConfig({
     config: {
       applyBaseStyles: false
     }
-  }), markdoc(), robots()],
-  output: "server",
+  }), markdoc({allowHTML: true}), robots()],
+  output: 'hybrid',
   adapter: netlify()
 });
