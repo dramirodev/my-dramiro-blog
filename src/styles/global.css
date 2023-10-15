@@ -212,5 +212,10 @@
         transform: translateZ(0) scale(1);
     }
 
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
     /* ------ REUSABLE UTILS - END ------ */
 }
