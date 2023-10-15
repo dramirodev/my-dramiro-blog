@@ -18,33 +18,33 @@ import Footer from "../components/Footer.astro";
 
 <!DOCTYPE html>
 <html class="theme-bubblegum" lang="en">
-  <head>
+<head>
     <!-- Global Metadata -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#fff" />
-    <meta name="canonical" content="https://davidramiro.com" />
-    <meta name="robots" content="index,follow" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="theme-color" content="#fff"/>
+    <meta name="canonical" content="https://davidramiro.com"/>
+    <meta name="robots" content="index,follow"/>
     <link rel="icon"
           type="image/png"
           href="/src/assets/avatar-icon.png">
 
-    <Favicon />
-    <slot name="meta" />
-    <GoogleFont />
-    <ThemeScript />
-  </head>
+    <Favicon/>
+    <slot name="meta"/>
+    <GoogleFont/>
+    <ThemeScript/>
+</head>
 
-  <body
-    class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8"
-  >
-    <Header />
-    <main id="main">
-      <slot name="main" />
-    </main>
-    <Footer />
-    <style>
-      body {
+<body
+        class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8"
+>
+<Header/>
+<main id="main">
+    <slot name="main"/>
+</main>
+<Footer/>
+<style>
+    body {
         display: grid;
         grid-template-areas:
           "header"
@@ -52,10 +52,11 @@ import Footer from "../components/Footer.astro";
           "footer";
         grid-template-rows: 5rem minmax(0, 1fr) 5rem;
         grid-template-columns: minmax(0, 1fr);
-      }
-      main {
+    }
+
+    main {
         grid-area: main;
-      }
-    </style>
-  </body>
+    }
+</style>
+</body>
 </html>

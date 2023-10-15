@@ -2,7 +2,8 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = "davidramiro.com";
-export const SITE_DESCRIPTION = "David Ramiro, front-end developer with javascript, react, astro, css, html, and performance skills.";
+export const SITE_DESCRIPTION =
+  "David Ramiro, front-end developer with javascript, react, astro, css, html, and performance skills.";
 export const TWITTER_HANDLE = "@dramirobarragan";
 export const MY_NAME = "David Ramiro";
 

@@ -15,34 +15,34 @@ import Footer from "../components/Footer.astro";
 import {formattedDate} from "../lib/date";
 
 export interface Props {
-  title: string;
-  date: Date;
+    title: string;
+    date: Date;
 }
 
-const { title, date } = Astro.props;
+const {title, date} = Astro.props;
 const dateFormatted = formattedDate(date);
 ---
 
 <!DOCTYPE html>
 <html class="theme-bubblegum" lang="en">
-  <head>
+<head>
     <!-- Global Metadata -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="keywords" content="ReactJS, TypeScript, JavaScript, Frontend, Desarrollo web">
     <meta name="author" content="David Ramiro">
-    <Favicon />
-    <slot name="meta" />
-    <GoogleFont />
-    <ThemeScript />
-  </head>
+    <Favicon/>
+    <slot name="meta"/>
+    <GoogleFont/>
+    <ThemeScript/>
+</head>
 
-  <body
-    class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8"
-  >
-    <Header />
-    <main id="main">
-      <section class="blog-post prose max-w-none prose-bubblegum">
+<body
+        class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8"
+>
+<Header/>
+<main id="main">
+    <section class="blog-post prose max-w-none prose-bubblegum">
         <h1 class="m-0 mb-[0.25em]">
           <span class="
               pl-6 relative block leading-[150%]
@@ -52,12 +52,12 @@ const dateFormatted = formattedDate(date);
           </span>
         </h1>
         <time class="block mb-[2em] text-text-muted">{dateFormatted}</time>
-        <slot name="content" />
-      </section>
-    </main>
-    <Footer />
-    <style>
-      body {
+        <slot name="content"/>
+    </section>
+</main>
+<Footer/>
+<style>
+    body {
         display: grid;
         grid-template-areas:
           "header"
@@ -65,10 +65,11 @@ const dateFormatted = formattedDate(date);
           "footer";
         grid-template-rows: 5rem minmax(0, 1fr) 5rem;
         grid-template-columns: minmax(0, 1fr);
-      }
-      main {
+    }
+
+    main {
         grid-area: main;
-      }
-    </style>
-  </body>
+    }
+</style>
+</body>
 </html>
