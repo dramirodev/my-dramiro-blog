@@ -1,6 +1,6 @@
 ---
 import {Image, Picture} from 'astro:assets';
-import DavidImage from "src/assets/david.png"
+import DavidImage from "src/assets/david_portada.png"
 import ReactIcon from "./icons/ReactIcon.astro";
 import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
 import JavaScriptIcon from "./icons/JavaScriptIcon.astro";
@@ -27,12 +27,14 @@ const aniosExperiencia = fechaActual.getFullYear() - fechaInicio.getFullYear();
         </h1>
     </div>
     <div>
-        <Image
-                with="970"
-                height="1003"
+        <Picture
+                with="405"
+                height="419"
+                formats={['avif', 'webp']}
                 src={DavidImage}
                 alt="Caricatura de David comiendo galletas"
-                class="rounded-full w-60 h-60 mx-auto mb-4 aspect-[970/1003]"
+                class="rounded-full w-[270px] h-[279px] mx-auto mb-4"
+                loading="eager"
         />
         <p class="mb-5">
             Hola! Soy desarrollador web con más de {aniosExperiencia} años de experiencia trabajando con tecnologías
