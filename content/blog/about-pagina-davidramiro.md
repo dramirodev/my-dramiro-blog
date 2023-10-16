@@ -6,7 +6,7 @@ description: "motivos por los que he desarrollado davidramiro.com"
 date: 2023-10-15
 ---
 
-El principal mótivo por el que he desarrollado esta página web es para tener un sitio donde poder recopilar mis notas a medida que voy aprendiendo.
+El principal mótivo por el que he desarrollado esta página web es para tener un sitio donde poder recopilar mis notas.
 
 Después viene satisfacer mi curiosidad por investigar y aprender nuevas tecnologías, en este caso [Astro](https://astro.build/) y [TailwindCSS](https://tailwindcss.com/).
 
